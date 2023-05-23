@@ -1,6 +1,6 @@
 package tests.taskTest;
 
-import org.openqa.selenium.By;
+import classes.entity.Book;
 import org.testng.annotations.Test;
 import tests.base.BaseTest;
 
@@ -22,8 +22,23 @@ public class FirstTaskTest extends BaseTest {
                 .fillAreaWithText()
                 .clickButtonToFind()
                 .findAllBooksInPage(bookInfoList)
-                .checkThatBookIsPresent()
-                .findParamInHeadOfJava2();
+                .checkThatBookIsPresentAndClick();
+
+    }
+
+    @Test
+    public void Try(){
+        basePage.open(MAIN_PAGE_OF_AMAZON);
+        List<Book> bookInfoList = new ArrayList<>();
+        Book book = new Book();
+        mainPage
+                .clickToChoose()
+                .chooseBooks()
+                .fillAreaWithText()
+                .clickButtonToFind()
+                .findParam(bookInfoList)
+                .checkThatBookIsPresentAndClick()
+                .compareObjects(book, bookInfoList);
 
     }
 }

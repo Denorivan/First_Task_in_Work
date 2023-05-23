@@ -7,6 +7,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
 
 import static classes.common.Config.CLEAR_STORAGE;
 import static classes.common.Config.HOLD_BROWSER_OPEN;
@@ -15,6 +16,12 @@ public class BaseTest {
     protected WebDriver driver = CommonActions.createDriver();
     protected BasePage basePage =new BasePage(driver);
     protected MainPage mainPage = new MainPage(driver);
+
+    @BeforeTest
+    public void setDriver(){
+
+    }
+
 
     @AfterTest
     public void clearCookLocalStorage(){
@@ -25,12 +32,12 @@ public class BaseTest {
         }
     }
 
-    /*@AfterSuite
+    @AfterSuite
     public void close(){
         if (HOLD_BROWSER_OPEN){
             driver.close();
             driver.quit();
         }
-    }*/
+    }
 
 }
