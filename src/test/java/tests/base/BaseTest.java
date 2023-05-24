@@ -1,6 +1,8 @@
 package tests.base;
 
 import classes.allPages.base.BasePage;
+import classes.allPages.pages.HeadFirst;
+import classes.allPages.pages.JavaPage;
 import classes.allPages.pages.MainPage;
 import classes.common.CommonActions;
 import org.openqa.selenium.JavascriptExecutor;
@@ -16,7 +18,8 @@ public class BaseTest {
     protected WebDriver driver = CommonActions.createDriver();
     protected BasePage basePage =new BasePage(driver);
     protected MainPage mainPage = new MainPage(driver);
-
+    protected JavaPage javaPage = new JavaPage(driver);
+    protected HeadFirst headFirst = new HeadFirst(driver);
     @BeforeTest
     public void setDriver(){
 

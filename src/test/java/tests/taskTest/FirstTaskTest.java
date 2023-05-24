@@ -35,10 +35,15 @@ public class FirstTaskTest extends BaseTest {
                 .clickToChoose()
                 .chooseBooks()
                 .fillAreaWithText()
-                .clickButtonToFind()
+                .clickButtonToFind();
+        javaPage
                 .findParam(bookInfoList)
-                .checkThatBookIsPresentAndClick()
-                .compareObjects(book, bookInfoList);
+                .checkThatBookIsPresentAndClick();
+
+
+        headFirst
+                .compareObjects(book,bookInfoList);
+
 
     }
 }
