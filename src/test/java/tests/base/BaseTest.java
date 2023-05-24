@@ -26,9 +26,7 @@ public class BaseTest {
     public void setDriver(){
         driver = CommonActions.createDriver();
         basePage = new BasePage(driver);
-        mainPage = new MainPage(driver);
-        javaPage = new JavaPage(driver);
-        headFirst = new HeadFirst(driver);
+
     }
 
 

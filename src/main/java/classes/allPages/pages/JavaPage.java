@@ -5,6 +5,7 @@ import classes.entity.Book;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 
 import java.util.List;
 
@@ -26,7 +27,6 @@ public class JavaPage extends BasePage {
             WebElement title = bookElement.findElement(By.xpath(".//span[@class='a-size-medium a-color-base a-text-normal']"));
             WebElement author = bookElement.findElement(By.xpath(".//div[@class='a-row']/span[contains(text(), 'by')]/following-sibling::*[1]"));
             WebElement price = bookElement.findElement(By.xpath(".//div[@class='a-section a-spacing-none a-spacing-top-micro puis-price-instructions-style']/parent::*"));
-            // WebElement isBestseller = bookElement.findElement(By.xpath(".//span[contains(text(), 'Best Seller')]"));
 
             Book book = new Book();
 
@@ -34,15 +34,10 @@ public class JavaPage extends BasePage {
                 book.setTitle(title.getText());
                 book.setAuthor(author.getText());
                 book.setPrice(price.getText().replaceAll("(?<=\\d)\\n|\\n(?=\\d)", ".").replaceAll("\\n", " "));
-                //  book.setIsBestseller(isBestseller.getText());
-
-
-
             }else {
                 book.setTitle("null");
                 book.setAuthor("null");
                 book.setPrice("null");
-                //  book.setIsBestseller("null");
             }
 
 
@@ -56,6 +51,7 @@ public class JavaPage extends BasePage {
             System.out.print("price: " + bookInfo.getPrice()+" | ");
             System.out.print("setIsBestseller: " + bookInfo.getIsBestseller()+" | ");
             System.out.println();
+
         }
 
         return this;

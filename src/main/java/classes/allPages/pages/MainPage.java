@@ -3,11 +3,9 @@ package classes.allPages.pages;
 import classes.allPages.base.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 
-import java.util.List;
 
-import static classes.constants.Constant.VariableForTextBox.enterJavaToTextBox;
+
 
 public class MainPage extends BasePage {
 
@@ -33,8 +31,8 @@ public class MainPage extends BasePage {
         return this;
     }
 
-    public MainPage fillAreaWithText(){
-        driver.findElement(textContainer).sendKeys(enterJavaToTextBox);
+    public MainPage fillAreaWithText(String str){
+        driver.findElement(textContainer).sendKeys(str);
         return this;
     }
 

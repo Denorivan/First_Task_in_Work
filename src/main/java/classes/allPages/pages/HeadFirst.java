@@ -16,7 +16,7 @@ public class HeadFirst extends BasePage {
         String title = driver.findElement(By.id("productTitle")).getText();
         String author = driver.findElement(By.xpath("//a[contains(text(), 'Kathy Sierra')]")).getText();
         String price = driver.findElement(By.xpath("//a[@id=\"a-autoid-3-announce\"]/span[@class=\"a-color-secondary\"]")).getText().replaceAll(" (.*)", "");
-        //String bestSeller = driver.findElement(By.xpath("//*[@class=\"a-icon a-icon-addon p13n-best-seller-badge\"]")).getText();
+
 
         book = new Book(title, author, price,null);
 
