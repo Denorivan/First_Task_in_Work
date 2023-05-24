@@ -15,14 +15,20 @@ import static classes.common.Config.CLEAR_STORAGE;
 import static classes.common.Config.HOLD_BROWSER_OPEN;
 
 public class BaseTest {
-    protected WebDriver driver = CommonActions.createDriver();
-    protected BasePage basePage =new BasePage(driver);
-    protected MainPage mainPage = new MainPage(driver);
-    protected JavaPage javaPage = new JavaPage(driver);
-    protected HeadFirst headFirst = new HeadFirst(driver);
+    protected WebDriver driver ;
+    protected BasePage basePage;
+    protected MainPage mainPage ;
+    protected JavaPage javaPage ;
+    protected HeadFirst headFirst ;
+
+
     @BeforeTest
     public void setDriver(){
-
+        driver = CommonActions.createDriver();
+        basePage = new BasePage(driver);
+        mainPage = new MainPage(driver);
+        javaPage = new JavaPage(driver);
+        headFirst = new HeadFirst(driver);
     }
 
 
