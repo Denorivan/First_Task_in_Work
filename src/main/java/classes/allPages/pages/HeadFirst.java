@@ -27,18 +27,23 @@ public class HeadFirst extends BasePage {
 
             )
             {
-                System.out.println(book1.getTitle());
-                System.out.println(book1.getAuthor());
-                System.out.println(book1.getPrice());
-                System.out.println(book1.getIsBestseller());
-
+                System.out.println();
+                System.out.print(book1.getTitle()+" | ");
+                System.out.print(book1.getAuthor()+" | ");
+                System.out.print(book1.getPrice()+" | ");
+                System.out.println(book1.getIsBestseller()+" | ");
                 System.out.println("Object is presenting in list");
+                System.out.print(book.getTitle()+" | ");
+                System.out.print(book.getAuthor()+" | ");
+                System.out.print(book.getPrice()+" | ");
+                System.out.println(book.getIsBestseller()+" | ");
                 return true;
             } else {
-                System.out.println(book.getTitle());
-                System.out.println(book.getAuthor());
-                System.out.println(book.getPrice());
-                System.out.println(book.getIsBestseller());
+                System.out.println();
+                System.out.print(book.getTitle()+" | ");
+                System.out.print(book.getAuthor()+" | ");
+                System.out.print(book.getPrice()+" | ");
+                System.out.println(book.getIsBestseller()+" | ");
                 System.out.println("Object is staying out in list");
                 return false;
             }

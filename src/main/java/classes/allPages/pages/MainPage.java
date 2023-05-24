@@ -18,9 +18,7 @@ public class MainPage extends BasePage {
     private final By allChoose = By.xpath("//div[@class='nav-search-scope nav-sprite']");
     private final By choosingBooks = By.xpath("//option[@value='search-alias=stripbooks-intl-ship']");
     private final By textContainer = By.id("twotabsearchtextbox");
-    private final By cardOfBook = By.cssSelector("div[data-component-type='s-search-result']");
     private final By finderButton = By.id("nav-search-submit-button");
-    private final By headOfJava = By.xpath("//span[contains(text(), 'Head First Java: A Brain-Friendly Guide')]");
 
 
 
@@ -43,24 +41,6 @@ public class MainPage extends BasePage {
     public MainPage clickButtonToFind(){
         driver.findElement(finderButton).click();
         return this;
-    }
-
-    public MainPage findAllBooksInPage(List<String>bookInfoList ){
-
-        List<WebElement> booksElementsList = driver.findElements(cardOfBook);
-
-        for(WebElement element : booksElementsList){
-            String string = element.getText().replaceAll("\n", " ");
-            bookInfoList.add(string);
-            System.out.println(string);
-            System.out.println("-------------------------------");
-        }
-        return this;
-    }
-
-    public MainPage checkThatBookIsPresentAndClick(){
-     driver.findElement(headOfJava).click();
-     return this;
     }
 
 }
