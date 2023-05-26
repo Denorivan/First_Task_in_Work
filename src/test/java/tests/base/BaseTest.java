@@ -1,25 +1,23 @@
 package tests.base;
 
 import classes.allPages.base.BasePage;
-import classes.allPages.pages.HeadFirst;
-import classes.allPages.pages.JavaPage;
-import classes.allPages.pages.MainPage;
+import classes.allPages.pages.ItemPage;
+import classes.allPages.pages.SearchBookResultPage;
+import classes.allPages.pages.StartingPage;
 import classes.common.CommonActions;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
-import org.testng.annotations.AfterSuite;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
 import static classes.common.Config.CLEAR_STORAGE;
-import static classes.common.Config.HOLD_BROWSER_OPEN;
 
 public class BaseTest {
     protected WebDriver driver ;
     protected BasePage basePage;
-    protected MainPage mainPage ;
-    protected JavaPage javaPage ;
-    protected HeadFirst headFirst ;
+    protected StartingPage startingPage;
+    protected SearchBookResultPage searchBookResultPage;
+    protected ItemPage itemPage;
 
 
     @BeforeTest
@@ -38,13 +36,13 @@ public class BaseTest {
             javascriptExecutor.executeScript("window.sessionStorage.clear()");
         }
     }
-
+/*
     @AfterSuite
     public void close(){
         if (HOLD_BROWSER_OPEN){
             driver.close();
             driver.quit();
         }
-    }
+    }*/
 
 }

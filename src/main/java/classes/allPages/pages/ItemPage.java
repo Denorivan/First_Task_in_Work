@@ -7,8 +7,8 @@ import org.openqa.selenium.WebDriver;
 
 import java.util.List;
 
-public class HeadFirst extends BasePage {
-    public HeadFirst(WebDriver driver) {
+public class ItemPage extends BasePage {
+    public ItemPage(WebDriver driver) {
         super(driver);
     }
 

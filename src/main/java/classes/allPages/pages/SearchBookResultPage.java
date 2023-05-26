@@ -5,12 +5,11 @@ import classes.entity.Book;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.testng.Assert;
 
 import java.util.List;
 
-public class JavaPage extends BasePage {
-    public JavaPage(WebDriver driver) {
+public class SearchBookResultPage extends BasePage {
+    public SearchBookResultPage(WebDriver driver) {
         super(driver);
     }
 
@@ -18,7 +17,7 @@ public class JavaPage extends BasePage {
     private final By headOfJava = By.xpath("//span[contains(text(), 'Head First Java: A Brain-Friendly Guide')]");
 
 
-    public JavaPage findParam(List<Book> bookInfoList){
+    public SearchBookResultPage findParam(List<Book> bookInfoList){
 
         List<WebElement> bookElements = driver.findElements(cardOfBook);
 
@@ -45,19 +44,21 @@ public class JavaPage extends BasePage {
 
         }
 
-        for (Book bookInfo : bookInfoList) {
-            System.out.print("Title: " + bookInfo.getTitle()+" | ");
-            System.out.print("author: " + bookInfo.getAuthor()+" | ");
-            System.out.print("price: " + bookInfo.getPrice()+" | ");
-            System.out.print("setIsBestseller: " + bookInfo.getIsBestseller()+" | ");
+        for (Book book : bookInfoList) {
+
+            System.out.print("Title: " + book.getTitle()+" | ");
+            System.out.print("author: " + book.getAuthor()+" | ");
+            System.out.print("price: " + book.getPrice()+" | ");
+            System.out.print("setIsBestseller: " + book.getIsBestseller()+" | ");
             System.out.println();
 
         }
 
+
         return this;
     }
 
-    public JavaPage checkThatBookIsPresentAndClick(){
+    public SearchBookResultPage checkThatBookIsPresentAndClick(){
         driver.findElement(headOfJava).click();
         return this;
     }

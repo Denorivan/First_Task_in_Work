@@ -1,8 +1,8 @@
 package tests.taskTest;
 
-import classes.allPages.pages.HeadFirst;
-import classes.allPages.pages.JavaPage;
-import classes.allPages.pages.MainPage;
+import classes.allPages.pages.ItemPage;
+import classes.allPages.pages.SearchBookResultPage;
+import classes.allPages.pages.StartingPage;
 import classes.entity.Book;
 import org.testng.annotations.Test;
 import tests.base.BaseTest;
@@ -16,24 +16,26 @@ public class FirstTaskTest extends BaseTest {
 
     @Test
     public void Try(){
-        mainPage = new MainPage(driver);
-        javaPage = new JavaPage(driver);
-        headFirst = new HeadFirst(driver);
-
-        basePage.open(MAIN_PAGE_OF_AMAZON);
+        startingPage = new StartingPage(driver);
+        searchBookResultPage = new SearchBookResultPage(driver);
+        itemPage = new ItemPage(driver);
         List<Book> bookInfoList = new ArrayList<>();
         Book book = new Book();
 
-        mainPage
-                .clickToChoose()
-                .chooseBooks()
-                .fillAreaWithText("Java")
-                .clickButtonToFind();
-        javaPage
+        basePage
+                .open(MAIN_PAGE_OF_AMAZON);
+
+        startingPage
+                .clickOnSearchDropdownCard()
+                .clickInSearchDropdownCardOnBooks()
+                .fillingKeywordSearchFild("Java")
+                .clickSubmitButtonToSearch();
+
+        searchBookResultPage
                 .findParam(bookInfoList)
                 .checkThatBookIsPresentAndClick();
 
-        headFirst
-                .compareObjects(book,bookInfoList);
+        itemPage
+                .compareObjects(book, bookInfoList);
     }
 }

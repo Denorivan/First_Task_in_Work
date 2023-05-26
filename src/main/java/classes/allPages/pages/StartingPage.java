@@ -7,9 +7,9 @@ import org.openqa.selenium.WebDriver;
 
 
 
-public class MainPage extends BasePage {
+public class StartingPage extends BasePage {
 
-    public MainPage(WebDriver driver) {
+    public StartingPage(WebDriver driver) {
         super(driver);
     }
 
@@ -21,22 +21,22 @@ public class MainPage extends BasePage {
 
 
 
-    public MainPage clickToChoose(){
+    public StartingPage clickOnSearchDropdownCard(){
         driver.findElement(allChoose).click();
         return this;
     }
 
-    public MainPage chooseBooks(){
+    public StartingPage clickInSearchDropdownCardOnBooks(){
         driver.findElement(choosingBooks).click();
         return this;
     }
 
-    public MainPage fillAreaWithText(String str){
+    public StartingPage fillingKeywordSearchFild(String str){
         driver.findElement(textContainer).sendKeys(str);
         return this;
     }
 
-    public MainPage clickButtonToFind(){
+    public StartingPage clickSubmitButtonToSearch(){
         driver.findElement(finderButton).click();
         return this;
     }
