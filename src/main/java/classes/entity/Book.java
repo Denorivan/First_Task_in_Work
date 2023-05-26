@@ -1,20 +1,19 @@
 package classes.entity;
 
+import java.util.Objects;
+
 public class Book {
     private String title;
     private String author;
-    private String price;
-    private String isBestseller;
+
 
     public Book() {
 
     }
 
-    public Book(String title, String author, String price, String isBestseller) {
+    public Book(String title, String author) {
         this.title = title;
         this.author = author;
-        this.price = price;
-        this.isBestseller = isBestseller;
     }
 
     public String getTitle() {
@@ -33,21 +32,19 @@ public class Book {
         this.author = author;
     }
 
-    public String getPrice() {
-        return price;
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        Book other = (Book) obj;
+        return Objects.equals(title, other.title) && Objects.equals(author, other.author);
     }
 
-    public void setPrice(String price) {
-        this.price = price;
-    }
-
-    public String getIsBestseller() {
-        return isBestseller;
-    }
-
-    public void setIsBestseller(String isBestseller) {
-        this.isBestseller = isBestseller;
-    }
 
 
 }

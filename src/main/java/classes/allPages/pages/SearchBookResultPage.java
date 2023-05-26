@@ -32,11 +32,9 @@ public class SearchBookResultPage extends BasePage {
             if(title != null & author != null & price !=null){
                 book.setTitle(title.getText());
                 book.setAuthor(author.getText());
-                book.setPrice(price.getText().replaceAll("(?<=\\d)\\n|\\n(?=\\d)", ".").replaceAll("\\n", " "));
             }else {
                 book.setTitle("null");
                 book.setAuthor("null");
-                book.setPrice("null");
             }
 
 
@@ -48,8 +46,6 @@ public class SearchBookResultPage extends BasePage {
 
             System.out.print("Title: " + book.getTitle()+" | ");
             System.out.print("author: " + book.getAuthor()+" | ");
-            System.out.print("price: " + book.getPrice()+" | ");
-            System.out.print("setIsBestseller: " + book.getIsBestseller()+" | ");
             System.out.println();
 
         }

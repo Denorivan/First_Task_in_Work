@@ -18,32 +18,27 @@ public class ItemPage extends BasePage {
         String price = driver.findElement(By.xpath("//a[@id=\"a-autoid-3-announce\"]/span[@class=\"a-color-secondary\"]")).getText().replaceAll(" (.*)", "");
 
 
-        book = new Book(title, author, price,null);
+        /*book = new Book(title, author);*/
 
+        book = new Book(title, author);
         for (Book book1 : bookList) {
             if (    book1.getTitle().contains(book.getTitle())
                     && book1.getAuthor().contains(book.getAuthor())
-                    && book1.getPrice().contains(book.getPrice())
 
             )
             {
                 System.out.println();
                 System.out.print(book1.getTitle()+" | ");
                 System.out.print(book1.getAuthor()+" | ");
-                System.out.print(book1.getPrice()+" | ");
-                System.out.println(book1.getIsBestseller()+" | ");
                 System.out.println("Object is presenting in list");
                 System.out.print(book.getTitle()+" | ");
                 System.out.print(book.getAuthor()+" | ");
-                System.out.print(book.getPrice()+" | ");
-                System.out.println(book.getIsBestseller()+" | ");
+
                 return true;
             } else {
                 System.out.println();
                 System.out.print(book.getTitle()+" | ");
                 System.out.print(book.getAuthor()+" | ");
-                System.out.print(book.getPrice()+" | ");
-                System.out.println(book.getIsBestseller()+" | ");
                 System.out.println("Object is staying out in list");
                 return false;
             }
@@ -51,8 +46,7 @@ public class ItemPage extends BasePage {
         System.out.println("Something went wrong ur param to compare: ");
         System.out.println(book.getTitle());
         System.out.println(book.getAuthor());
-        System.out.println(book.getPrice());
-        System.out.println(book.getIsBestseller());
+
 
         return false;
     }
