@@ -7,10 +7,12 @@ import classes.allPages.pages.StartingPage;
 import classes.common.CommonActions;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 
 import static classes.common.Config.CLEAR_STORAGE;
+import static classes.common.Config.HOLD_BROWSER_OPEN;
 
 public class BaseTest {
     protected WebDriver driver ;
@@ -36,13 +38,12 @@ public class BaseTest {
             javascriptExecutor.executeScript("window.sessionStorage.clear()");
         }
     }
-/*
     @AfterSuite
     public void close(){
         if (HOLD_BROWSER_OPEN){
             driver.close();
             driver.quit();
         }
-    }*/
+    }
 
 }

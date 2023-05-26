@@ -1,4 +1,17 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 9.302 s - in TestSuite
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 10.862 s <<< FAILURE! - in TestSuite
+Try(tests.taskTest.FirstTaskTest)  Time elapsed: 9.067 s  <<< FAILURE!
+org.openqa.selenium.NoSuchElementException: 
+no such element: Unable to locate element: {"method":"xpath","selector":".//div[@class='a-section a-spacing-none a-spacing-top-micro puis-price-instructions-style']/parent::*"}
+  (Session info: chrome=113.0.5672.127)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.8.1', revision: '8ebccac989'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [0fd2086e766d8d2aa1971b830a94e178, findChildElement {id=ABB1FF1036DE3AE36AF1FEDEB43191E6_element_57, using=xpath, value=.//div[@class='a-section a-spacing-none a-spacing-top-micro puis-price-instructions-style']/parent::*}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 113.0.5672.127, chrome: {chromedriverVersion: 113.0.5672.63 (0e1a4471d5ae..., userDataDir: C:\Users\Vsevolod\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:53797}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:53797/devtoo..., se:cdpVersion: 113.0.5672.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 0fd2086e766d8d2aa1971b830a94e178
+	at tests.taskTest.FirstTaskTest.Try(FirstTaskTest.java:35)
+
