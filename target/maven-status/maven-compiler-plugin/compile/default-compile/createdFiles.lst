@@ -1,0 +1,10 @@
+classes\allPages\base\BasePage.class
+classes\entity\Book.class
+classes\allPages\pages\ItemPage.class
+classes\common\CommonActions.class
+classes\constants\Constant$TimeOutVariable.class
+classes\allPages\pages\SearchBookResultPage.class
+classes\allPages\pages\StartingPage.class
+classes\constants\Constant$UrlVariable.class
+classes\constants\Constant.class
+classes\common\Config.class
