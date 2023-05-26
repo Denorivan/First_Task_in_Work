@@ -12,10 +12,10 @@ import java.util.List;
 
 import static classes.constants.Constant.UrlVariable.MAIN_PAGE_OF_AMAZON;
 
-public class FirstTaskTest extends BaseTest {
+public class TestsForSearchResultAndCompareTo extends BaseTest {
 
     @Test
-    public void Try(){
+    public void TestForCheckListOfBookJavaIsPresentAndCompareToCertainBookIsPresentInList(){
         startingPage = new StartingPage(driver);
         searchBookResultPage = new SearchBookResultPage(driver);
         itemPage = new ItemPage(driver);
