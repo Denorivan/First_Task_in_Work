@@ -26,6 +26,7 @@ public class BaseTest {
     public void setDriver(){
         driver = CommonActions.createDriver();
         basePage = new BasePage(driver);
+        driver.manage().window().maximize();
 
     }
 

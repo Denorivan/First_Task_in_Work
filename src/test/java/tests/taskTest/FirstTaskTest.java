@@ -41,5 +41,6 @@ public class FirstTaskTest extends BaseTest {
                 .compareObjects(book, bookInfoList);
 
         Assert.assertTrue(bookInfoList.contains(expectedBook));
+
     }
 }
