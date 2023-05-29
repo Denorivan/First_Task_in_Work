@@ -5,15 +5,29 @@ import java.util.Objects;
 public class Book {
     private String title;
     private String author;
+    private String price;
 
 
     public Book() {
 
     }
+    public Book(String title, String author, String price) {
+        this.title = title;
+        this.author = author;
+        this.price = price;
+    }
 
     public Book(String title, String author) {
         this.title = title;
         this.author = author;
+    }
+
+    public String getPrice() {
+        return price;
+    }
+
+    public void setPrice(String price) {
+        this.price = price;
     }
 
     public String getTitle() {

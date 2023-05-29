@@ -12,8 +12,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static classes.constants.Constant.UrlVariable.MAIN_PAGE_OF_AMAZON;
+import static classes.constants.Constant.UrlVariable.RUBY_SEARCH;
 
-public class FirstTaskTest extends BaseTest {
+public class SecondTaskTest extends BaseTest {
 
     @Test
     public void Try(){
@@ -25,22 +26,18 @@ public class FirstTaskTest extends BaseTest {
         Book expectedBook = new Book("Head First Java: A Brain-Friendly Guide", "Kathy Sierra");
 
         basePage
-                .open(MAIN_PAGE_OF_AMAZON);
+                .open(RUBY_SEARCH);
 
-        startingPage
+        /*startingPage
                 .clickOnSearchDropdownCard()
                 .clickInSearchDropdownCardOnBooks()
-                .fillingKeywordSearchFild("Java")
-                .clickSubmitButtonToSearch();
+                .fillingKeywordSearchFild("Ruby")
+                .clickSubmitButtonToSearch();*/
 
         searchBookResultPage
-                .findParamForJava(bookInfoList)
-                .checkThatBookIsPresentAndClick();
+                .findParamForRuby(bookInfoList);
 
-        itemPage
-                .compareObjects(book, bookInfoList);
 
-        Assert.assertTrue(bookInfoList.contains(expectedBook));
 
     }
 }

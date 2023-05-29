@@ -3,8 +3,9 @@
 <suite name="All Test Suite">
     <test verbose="2" preserve-order="true" name="D:/First_Task_in_Work">
         <classes>
-            <class name="tests.taskTest.FirstTaskTest"><methods>
-            </methods>
+            <class name="tests.taskTest.FirstTaskTest">
+                <methods>
+                </methods>
             </class>
         </classes>
     </test>
