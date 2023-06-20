@@ -24,7 +24,6 @@ public class ItemPage extends BasePage {
         for (Book book1 : bookList) {
             if (    book1.getTitle().contains(book.getTitle())
                     && book1.getAuthor().contains(book.getAuthor())
-
             )
             {
                 System.out.println();
