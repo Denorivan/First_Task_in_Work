@@ -9,6 +9,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
+import org.testng.Assert;
 
 
 import java.util.ArrayList;
@@ -25,7 +26,6 @@ public class AmazonSteps {
     private final SelenideElement allChoose = $x("//div[@class='nav-search-scope nav-sprite']");
     private final SelenideElement textContainer = $(By.id("twotabsearchtextbox"));
     private final SelenideElement finderButton = $(By.id("nav-search-submit-button"));
-    private final SelenideElement headOfJava = $x("//span[contains(text(), 'Head First Java: A Brain-Friendly Guide')]");
 
     @When("Click on dropdown card")
     public void dropdownClick() {
@@ -66,40 +66,16 @@ public class AmazonSteps {
         }
     }
 
-    @And("Find particular book and click")
-    public void findBookHeadFirstAndClick(){
+    @And("Find particular book and click {string}")
+    public void findBookHeadFirstAndClick(String searchingNameOfTitle){
+        SelenideElement headOfJava = $x("//span[contains(text(), '" + searchingNameOfTitle + "')]");
         headOfJava.click();
     }
 
     @Then("Check that the book is on the list {string} by {string}")
-    public boolean compareObjects(String title, String author) {
+    public void compareObjects(String title, String author) {
         book =new Book(title, author);
-        for (Book book1: bookInfoList){
-            if (    book1.getTitle().contains(book.getTitle())
-                    && book1.getAuthor().contains(book.getAuthor())
-            )
-            {
-                System.out.println();
-                System.out.print(book1.getTitle()+" | ");
-                System.out.print(book1.getAuthor()+" | ");
-                System.out.println();
-                System.out.println("Object is presenting in list");
-                System.out.print(book.getTitle()+" | ");
-                System.out.print(book.getAuthor()+" | ");
-
-                return true;
-            } else {
-                System.out.println();
-                System.out.print(book.getTitle()+" | ");
-                System.out.print(book.getAuthor()+" | ");
-                System.out.println("Object is staying out in list");
-                return false;
-            }
-        }
-        System.out.println("Something went wrong ur param to compare: ");
-        System.out.println(book.getTitle());
-        System.out.println(book.getAuthor());
-        return false;
-        }
+        Assert.assertTrue(bookInfoList.contains(book));
+    }
 
 }
