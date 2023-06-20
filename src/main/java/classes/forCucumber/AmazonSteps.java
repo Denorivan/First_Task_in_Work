@@ -22,15 +22,14 @@ public class AmazonSteps {
     List<Book> bookInfoList = new ArrayList<>();
     Book book = new Book();
     private final SelenideElement choosingBooks = $x("//option[@value='search-alias=stripbooks-intl-ship']");
-
+    private final SelenideElement allChoose = $x("//div[@class='nav-search-scope nav-sprite']");
     private final SelenideElement textContainer = $(By.id("twotabsearchtextbox"));
     private final SelenideElement finderButton = $(By.id("nav-search-submit-button"));
     private final SelenideElement headOfJava = $x("//span[contains(text(), 'Head First Java: A Brain-Friendly Guide')]");
 
     @When("Click on dropdown card")
     public void dropdownClick() {
-        //allChoose.click();
-
+        allChoose.click();
     }
 
     @And("Choose books")
