@@ -27,12 +27,6 @@ public class AmazonSteps {
     private final SelenideElement finderButton = $(By.id("nav-search-submit-button"));
     private final SelenideElement headOfJava = $x("//span[contains(text(), 'Head First Java: A Brain-Friendly Guide')]");
 
-    private final SelenideElement javaTitle = $(By.id("productTitle"));
-    private final SelenideElement javaAuthor = $x("//a[contains(text(), 'Kathy Sierra')]");
-
-
-
-
     @When("Click on dropdown card")
     public void dropdownClick() {
         //allChoose.click();
