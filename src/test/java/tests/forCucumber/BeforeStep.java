@@ -1,4 +1,4 @@
-package classes.forCucumber;
+package tests.forCucumber;
 
 import com.codeborne.selenide.Selenide;
 import io.cucumber.java.en.Given;

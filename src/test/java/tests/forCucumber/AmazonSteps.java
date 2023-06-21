@@ -1,4 +1,4 @@
-package classes.forCucumber;
+package tests.forCucumber;
 
 
 
